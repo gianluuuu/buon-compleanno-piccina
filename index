@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Per Patatina ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #fbf8f8;
+    color: #70535f;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 40px 20px;
+    animation: comparsa 1.2s ease;
+}
+
+@keyframes comparsa {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.piccolo-testo {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #ae8998;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 8vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+h1 span {
+    color: #bd8499;
+    font-style: italic;
+}
+
+.descrizione {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #927d85;
+    margin-bottom: 35px;
+}
+
+button {
+    background: transparent;
+    border: 1px solid #cba9b6;
+    color: #906879;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f2e5e9;
+    transform: translateY(-3px);
+}
+
+/* LETTERA */
+
+.lettera {
+    display: none;
+    margin-top: 40px;
+    padding: 35px;
+    background: #fffdfd;
+    border: 1px solid #eee3e7;
+    text-align: left;
+    line-height: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    animation: apparizione 0.8s ease;
+}
+
+.lettera.aperta {
+    display: block;
+}
+
+@keyframes apparizione {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.firma {
+    text-align: right;
+    color: #bd8499;
+    font-style: italic;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.cuore {
+    margin-top: 35px;
+    color: #bd8499;
+    font-size: 17px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="piccolo-testo">
+        una piccola sorpresa per te
+    </div>
+
+    <h1>
+        Buon compleanno,<br>
+        <span>Patatina.</span>
+    </h1>
+
+    <p class="descrizione">
+        Ho preparato qualcosa di speciale.<br>
+        Qualcosa che vorrei leggessi con calma.
+    </p>
+
+    <button onclick="apriLettera()">
+        Apri la mia lettera ♡
+    </button>
+
+    <div class="lettera" id="lettera">
+
+        <h2 style="font-weight:400; color:#a9788b;">
+            Alla mia Patatina,
+        </h2>
+
+        <!-- SCRIVI QUI IL CONTENUTO DELLA TUA LETTERA -->
+
+        Patatina, ho pensato di fare una cosa un
+        po' diversa dalla solita lettera, sicuramente 
+        più unica, ho pensato che scriverti una lettera 
+        su un sito tutto per te fosse più speciale e 
+        sicuramente più romantico.
+
+        Ho fatto questo sito tutto per te per poter fare 
+        una cosa che sicuramente non hai mai avuto, 
+        così ti ricorderai sempre di questo commpleanno.
+
+        Io ti amo tantissimo, nonostante tu dica il
+        contrario, ti amo di più io.
+
+        Insieme abbiamo passato dei momenti bellissimi, 
+        io sto benissimo insieme a te e vorrei davvero 
+        rimanerci per sempre.
+
+        <div class="firma">
+            Ti amo tanto, dalla tua stellina♡
+        </div>
+
+    </div>
+
+    <div class="cuore">♡</div>
+
+</div>
+
+<script>
+
+function apriLettera() {
+
+    const lettera = document.getElementById("lettera");
+
+    lettera.classList.toggle("aperta");
+
+    if (lettera.classList.contains("aperta")) {
+        lettera.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+
+}
+
+</script>
+
+</body>
+</html>
